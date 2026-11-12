@@ -1,0 +1,55 @@
+{
+  "pricing": { "markupBps": 2000, "minMarginBps": 1000 },
+  "taxBps": 0,
+  "lines": [
+    {
+      "name": "A",
+      "costCents": 10000,
+      "qtyMilli": 2000,
+      "billing": "once",
+      "optional": false,
+      "selected": true,
+      "taxable": true,
+      "unitPriceCents": 12000,
+      "extendedCents": 24000
+    },
+    {
+      "name": "B",
+      "costCents": 5000,
+      "qtyMilli": 1500,
+      "billing": "monthly",
+      "optional": false,
+      "selected": true,
+      "taxable": true,
+      "unitPriceCents": 6000,
+      "extendedCents": 9000
+    },
+    {
+      "name": "C",
+      "costCents": 8000,
+      "qtyMilli": 1000,
+      "billing": "once",
+      "optional": true,
+      "selected": false,
+      "taxable": true,
+      "unitPriceCents": 9600,
+      "extendedCents": 9600
+    },
+    {
+      "name": "D",
+      "costCents": 20000,
+      "qtyMilli": 1000,
+      "billing": "once",
+      "optional": true,
+      "selected": true,
+      "taxable": true,
+      "unitPriceCents": 24000,
+      "extendedCents": 24000
+    }
+  ],
+  "expected": {
+    "once": { "priceCents": 48000, "costCents": 40000, "marginBps": 1667, "taxCents": 0 },
+    "monthly": { "priceCents": 9000, "costCents": 7500, "marginBps": 1667, "taxCents": 0 },
+    "annual": { "priceCents": 0, "costCents": 0, "marginBps": null, "taxCents": 0 }
+  }
+}
