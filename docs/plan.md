@@ -40,4 +40,4 @@ Next.js (App Router), TypeScript, Tailwind, Drizzle, Postgres, Auth.js with Micr
 
 ## Still needed from Ryan
 
-Entra app registration, Halo API application, Benji Pays API key, D&H and Ingram credentials, NTS docs, a Vercel project if the preview should be hosted, sample Salesbuildr PDFs, and the business decisions listed in `docs/decisions.md`.
+Entra app registration, Halo API application, Benji Pays API key, D&H and Ingram credentials, NTS docs, sample Salesbuildr PDFs, and the business decisions listed in `docs/decisions.md`. The Railway preview is already up.
