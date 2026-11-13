@@ -6,8 +6,8 @@ import { normalizeMpn } from "../core/mpn";
 const syncedAt = new Date("2026-11-12T00:00:00.000Z");
 
 /**
- * Local stand-ins for Halo cache rows. This runs only when the development
- * bypass is on and no Postgres URL is set. It never creates a client master.
+ * Stand-ins for Halo cache rows. This runs only when the development bypass
+ * is on, and only for rows that are missing. It never creates a client master.
  */
 export async function seedSampleData(db: AppDatabase): Promise<void> {
   const existingClients = await db.select({ id: clients.id }).from(clients).limit(1);

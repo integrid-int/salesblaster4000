@@ -10,9 +10,10 @@ import {
 } from "./policy";
 
 describe("auth policy", () => {
-  it("refuses the development bypass in production", () => {
-    expect(devBypassAllowed({ NODE_ENV: "production", AUTH_DEV_BYPASS: "1" })).toBe(false);
+  it("follows AUTH_DEV_BYPASS exactly, including in production", () => {
+    expect(devBypassAllowed({ NODE_ENV: "production", AUTH_DEV_BYPASS: "1" })).toBe(true);
     expect(devBypassAllowed({ NODE_ENV: "development", AUTH_DEV_BYPASS: "1" })).toBe(true);
+    expect(devBypassAllowed({ NODE_ENV: "production" })).toBe(false);
     expect(devBypassAllowed({ NODE_ENV: "development", AUTH_DEV_BYPASS: "true" })).toBe(false);
   });
 

@@ -28,6 +28,7 @@ async function openDb(): Promise<AppDatabase> {
     const pool = new pg.Pool({ connectionString: databaseUrl, max: 5 });
     const db = drizzlePg(pool, { schema });
     await migratePg(db, { migrationsFolder });
+    if (devBypassAllowed(process.env)) await seedSampleData(db as unknown as AppDatabase);
     return db as unknown as AppDatabase;
   }
 

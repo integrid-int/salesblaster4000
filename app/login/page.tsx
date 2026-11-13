@@ -43,8 +43,8 @@ export default async function LoginPage({
         {dev ? (
           <form action={devSignIn} className="grid gap-3 rounded-md border border-line bg-card p-4">
             <p className="text-sm leading-6">
-              Development sign-in is on. It accepts only @integrid.net addresses and is refused
-              when NODE_ENV is production.
+              Development sign-in is on. It accepts only @integrid.net addresses and does not check
+              a password.
             </p>
             <label className={labelClass}>
               Email

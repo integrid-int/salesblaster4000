@@ -11,7 +11,7 @@ pnpm install
 cp .env.example .env.local
 ```
 
-Set `AUTH_DEV_BYPASS=1` in `.env.local` to sign in with an `@integrid.net` address and load sample clients. That switch does nothing when `NODE_ENV` is `production`.
+Set `AUTH_DEV_BYPASS=1` to sign in with an `@integrid.net` address and load sample clients. The form does not check a password. It is set on the Railway preview.
 
 ```bash
 pnpm dev

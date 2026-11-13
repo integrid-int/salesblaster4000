@@ -6,7 +6,11 @@ The handoff default is Vercel. No Vercel project or database was available here,
 
 ## 2026-11-12 — The live preview is on Railway
 
-Ryan asked for this preview on Railway. The project is `quotewright` in his workspace, with the app service `quotewright` and a private Postgres service. The public URL is https://quotewright-production.up.railway.app. Production sign-in is still Entra, and those variables are unset, so the login page says the app registration is missing. `AUTH_DEV_BYPASS` stays off because `NODE_ENV` is production. Railway does not run the Vercel cron, so this preview does not drain the outbox.
+Ryan asked for this preview on Railway. The project is `quotewright` in his workspace, with the app service `quotewright` and a private Postgres service. The public URL is https://quotewright-production.up.railway.app. Production sign-in is still Entra, and those variables are unset. Railway does not run the Vercel cron, so this preview does not drain the outbox.
+
+## 2026-11-12 — Railway preview uses the development email form
+
+Ryan asked for the email form on https://quotewright-production.up.railway.app. `AUTH_DEV_BYPASS=1` is set on that service. The form accepts only `@integrid.net` and does not check a password, so anyone who can open the URL can sign in as any Integrid address. `ryan@integrid.net` is on the admin list. Sample clients, contacts, catalog rows, and the default pricing rule are inserted when those rows are missing.
 
 ## 2026-11-12 — Cache Components stay off
 
@@ -18,7 +22,7 @@ Money is integer cents. Markup, minimum margin, deposit, and tax are integer bas
 
 ## 2026-11-12 — Development sign-in
 
-`AUTH_DEV_BYPASS=1` shows an email form, and only when `NODE_ENV` is not `production`. The address must be `@integrid.net`. Production sign-in is Microsoft Entra for the tenant in `AUTH_MICROSOFT_ENTRA_ID_TENANT_ID`. The issuer is that tenant, not `common`. A token whose `tid` does not match is rejected. The first admin list is `QUOTEWRIGHT_ADMIN_EMAILS`; the example lists `ryan@integrid.net`. Everyone else in the tenant is a seller. Role changes apply on the next sign-in.
+`AUTH_DEV_BYPASS=1` shows an email form, including when `NODE_ENV` is production. The address must be `@integrid.net`, and the form does not check a password. Ryan asked for that form on the Railway preview. Sample clients load when the switch is on and those rows are missing. Production sign-in is Microsoft Entra for the tenant in `AUTH_MICROSOFT_ENTRA_ID_TENANT_ID`. The issuer is that tenant, not `common`. A token whose `tid` does not match is rejected. The first admin list is `QUOTEWRIGHT_ADMIN_EMAILS`; the example lists `ryan@integrid.net`. Everyone else in the tenant is a seller. Role changes apply on the next sign-in.
 
 ## 2026-11-12 — Sample data is not a client master
 

@@ -3,7 +3,7 @@ export type Role = "seller" | "admin";
 type Env = Record<string, string | undefined>;
 
 export function devBypassAllowed(env: Env): boolean {
-  return env.NODE_ENV !== "production" && env.AUTH_DEV_BYPASS === "1";
+  return env.AUTH_DEV_BYPASS === "1";
 }
 
 export function entraConfigured(env: Env): boolean {
