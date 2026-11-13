@@ -10,7 +10,9 @@ generated_for_tz: America/New_York
 repo: integrid-int/salesblaster4000
 branch: cursor/quotewright-start-0f44
 base: main
-head: dcf632347c4476032541c4c6397637a5b05c04c4
+implementation_head: dcf632347c4476032541c4c6397637a5b05c04c4
+review_tree: implementation_head
+note: This file is committed after implementation_head. Review that tree. Ignore this file as product code.
 pr: https://github.com/integrid-int/salesblaster4000/pull/1
 pr_number: 1
 task: review
