@@ -4,6 +4,10 @@
 
 The handoff default is Vercel. No Vercel project or database was available here, so the app also runs on local PGlite when `DATABASE_URL` is unset and on Postgres when it is set. The outbox drain is `GET` or `POST /api/jobs/outbox`, which matches Vercel Cron. A cron entry is in `vercel.json`. It refuses to run until `CRON_SECRET` is set.
 
+## 2026-11-12 — The live preview is on Railway
+
+Ryan asked for this preview on Railway. The project is `quotewright` in his workspace, with the app service `quotewright` and a private Postgres service. The public URL is https://quotewright-production.up.railway.app. Production sign-in is still Entra, and those variables are unset, so the login page says the app registration is missing. `AUTH_DEV_BYPASS` stays off because `NODE_ENV` is production. Railway does not run the Vercel cron, so this preview does not drain the outbox.
+
 ## 2026-11-12 — Cache Components stay off
 
 Next.js 16 can turn on Cache Components. Quote pages read the signed-in user on every request, so they are dynamic. The flag is left off until there is a cached public page to justify it.

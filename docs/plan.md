@@ -15,7 +15,7 @@ Next.js (App Router), TypeScript, Tailwind, Drizzle, Postgres, Auth.js with Micr
 | ID | Package | State |
 | --- | --- | --- |
 | WP0 | API discovery | Blocked. No credentials. See `docs/api/README.md`. |
-| WP1 | Foundation | Started. App, schema, Entra wiring, CI. Preview deploy needs a Vercel project. |
+| WP1 | Foundation | Started. App, schema, Entra wiring, CI. A Railway preview is up. Real Entra sign-in still needs the app registration. |
 | WP2 | Core contracts | Started. Types, money, outbox worker. |
 | WP3 | Halo read sync | Waiting on WP0 fixtures. |
 | WP4 | D&H adapter | Waiting on WP0 fixtures. |

@@ -27,6 +27,8 @@ pnpm lint && pnpm typecheck && pnpm test
 
 ## Status
 
+The live preview is https://quotewright-production.up.railway.app. Microsoft sign-in appears after the Entra app registration is set on that Railway service.
+
 Halo, Benji Pays, D&H, and Ingram credentials are not in this environment, so those adapters are not implemented and no live API calls are made. What works now:
 
 - Microsoft Entra sign-in for the Integrid tenant, once the app registration is configured
